@@ -1,7 +1,7 @@
 import fs from 'fs';
 import clipboardy from 'clipboardy';
-import { fileURLToPath, pathToFileURL } from 'url';
-import path from 'path'; // Import path module
+import { fileURLToPath } from 'url';
+import path from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +26,7 @@ export class owo {
     public options: Options;
 
     constructor(options?: Options) {
-        let allowNSFW = false; // Default to false
+        let allowNSFW = false;
         if (options && typeof options.allowNSFW === 'boolean') {
             allowNSFW = options.allowNSFW;
         } else if (process.env.BOYKISSER_ALLOW_NSFW) {
@@ -44,8 +44,7 @@ export class owo {
     }
 
     async loadAsciiArt() {
-        // Use path.join for cross-platform compatibility and __dirname
-        const baseDir = path.join(__dirname, 'ascii'); // Assuming ascii is one level up from src/dist
+        const baseDir = path.join(__dirname, 'ascii');
         const nsfwDir = path.join(baseDir, 'nsfw');
         const sfwDir = path.join(baseDir, 'sfw');
         const dirsToLoad = this.options.allowNSFW ? [nsfwDir, sfwDir] : [sfwDir];
@@ -60,15 +59,12 @@ export class owo {
                     }
                 }
             } else {
-                // Use console.error for warnings/errors
                 console.error(`Warning: Directory ${dir} does not exist.`);
             }
         }
         // Add a check if no art was loaded
         if (this.loadedAsciiArt.length === 0) {
             console.error("Error: No ASCII art files found. Looked in:", dirsToLoad.join(', '));
-            // Optionally, throw an error or exit
-            // throw new Error("No ASCII art files found.");
         }
     }
 

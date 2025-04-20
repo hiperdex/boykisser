@@ -2,19 +2,19 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
-import clipboardy from 'clipboardy'; // Import clipboardy
-import owo from './index.js'; // Assuming index.js is the compiled output
+import clipboardy from 'clipboardy';
+import owo from './index.js';
 
 const program = new Command();
 
 program
     .name('boykisser')
-    .version('1.0.0') // Replace with your actual version
+    .version('1.0.0')
     .description(chalk.magenta('A CLI tool to display and copy boykisser ASCII art.'))
     .option('-c, --copy', 'Copy the ASCII art content to the clipboard instead of displaying it.')
     .option('-n, --nsfw', 'Allow NSFW ASCII art. This does not mean you will get NSFW every time, it just allows for NSFW art to be shown', false)
     .option('--name <name>, --id <name>', 'Get ASCII art by its file name (without .txt extension).')
-    .option('--index <index>', 'Get ASCII art by its index.', (value) => parseInt(value, 10)) // Parse index as integer
+    .option('--index <index>', 'Get ASCII art by its index.', (value) => parseInt(value, 10))
     .action(async (options) => {
         try {
             const boykisser = new owo({ allowNSFW: options.nsfw });
@@ -34,7 +34,7 @@ program
             if (options.name) {
                 sourceDescription = `by name "${options.name}"`;
                 art = boykisser.getAsciiArtByName(options.name, { includeFilename: false });
-                artContent = typeof art === 'string' ? art : art.content; // Assign here
+                artContent = typeof art === 'string' ? art : art.content;
             } else if (options.index !== undefined && !isNaN(options.index)) {
                  if (options.index < 0) {
                     console.error(chalk.red('Error: Index cannot be negative.'));
@@ -42,11 +42,11 @@ program
                  }
                 sourceDescription = `by index ${options.index}`;
                 art = boykisser.getAsciiArtByIndex(options.index, { includeFilename: false });
-                artContent = typeof art === 'string' ? art : art.content; // Assign here
+                artContent = typeof art === 'string' ? art : art.content;
             } else {
                 // Default: Get random
                 art = boykisser.getRandomAsciiArt({ includeFilename: false });
-                artContent = typeof art === 'string' ? art : art.content; // Assign here
+                artContent = typeof art === 'string' ? art : art.content;
             }
 
 
@@ -61,13 +61,12 @@ program
             }
         } catch (error: any) {
             console.error(chalk.red(`Error: ${error.message}`));
-            // Optionally show help on error or specific errors
-            // program.outputHelp();
+            program.outputHelp();
             process.exit(1);
         }
     });
 
-// Enhance help display
+    // Hhelp information
 program.on('--help', () => {
     console.log('');
     console.log(chalk.yellow('Examples:'));
@@ -83,14 +82,7 @@ program.on('--help', () => {
 
 // Handle cases where no arguments might be provided, though .action covers the default
 if (!process.argv.slice(2).length) {
-   // If no arguments are given, the .action block will run by default.
-   // You could uncomment the line below if you prefer showing help instead.
-   // program.outputHelp();
+    program.outputHelp();
 }
 
 program.parse(process.argv);
-
-// If no specific action triggered by options like --name or --index,
-// the main .action() block handles the default behavior (random art).
-// Commander's default behavior when no command matches might show help,
-// but our .action() on the base program handles the "no command" case.
