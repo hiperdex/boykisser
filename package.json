@@ -1,6 +1,6 @@
 {
   "name": "boykisser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI utility to paste (or copy to clipboard) random (or specefic) boykisser ASCII art in your terminal. - i know what you are.",
   "main": "dist/index.js",
   "type": "module",
